@@ -1,0 +1,53 @@
+import tkinter as tk
+def add():
+    a = int(e1.get())
+    b = int(e2.get())
+    leftdata = str(a+b)
+    left.config(text= leftdata)
+def sub():
+    a = int(e1.get())
+    b = int(e2.get())
+    leftdata = str(a-b)
+    left.config(text= leftdata)
+def mul():
+    a = int(e1.get())
+    b = int(e2.get())
+    leftdata = str(a*b)
+    left.config(text= leftdata)
+def div():
+    a = int(e1.get())
+    b = int(e2.get())
+    leftdata = str(a/b)
+    left.config(text= leftdata)
+def power():
+    a = int(e1.get())
+    b = int(e2.get())
+    leftdata = str(a**b)
+    left.config(text= leftdata)
+def clear_answer():
+    left.config(text = ' ')
+w1 = tk.PanedWindow()
+w1.pack(fill='both',expand = 1)
+left = tk.Entry(w1,bd=5)
+w1.add(left)
+
+w2 = tk.PanedWindow(w1,orient='vertical')
+w1.add(w2)
+e1 = tk.Entry(w2)
+e2 = tk.Entry(w2)
+
+w2.add(e1)
+w2.add(e2)
+button1 = tk.Button(w2,text = "Add",command = add)
+w2.add(button1)
+button2 = tk.Button(w2,text = "Subtract",command = sub)
+w2.add(button2)
+button3 = tk.Button(w2,text = "Multiply",command = mul)
+w2.add(button3)
+button4 = tk.Button(w2,text = "Divide",command = div)
+w2.add(button4)
+button5 = tk.Button(w2,text = "Find Power",command = power)
+w2.add(button5)
+button6 = tk.Button(w2,text = "Clear",command = clear_answer)
+w2.add(button6)
+tk.mainloop()
